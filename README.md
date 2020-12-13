@@ -5,7 +5,11 @@ exposed as a REST API using [connexion](https://github.com/zalando/connexion).
 
 ## Quick start
 
-Build the docker image using th'
+Build the docker image using the `build.sh` script by uncommenting the wanted images.
+Then choose the wanted image and start the container by using the command:
+```
+docker run -d --rm --name yolo_service -p 8080:8080 --gpus all soi/yolo_service:1.0_yolov3_coco 
+```
 
 This will expose two endpoints: `detect` which returns the detected classes, and `annotate` which returns a copy of the image annotated with the detections. Use a GET request if you want to provide an URL to the image, or a POST request if you want to upload an image file.
 
